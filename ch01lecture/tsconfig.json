@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    // "checkJs": true,          // JS 파일에서 타입 검사 수행
+    // "allowJs": true,          // JS 파일 허용
+    "outDir": "./dist",         // 컴파일된 파일 저장 위치
+    "rootDir": "./src",         // 소스 파일 위치
+    "target": "es6",            // ES6 버전 사용
+    "module": "commonjs",       // CommonJS 모듈 시스템 사용
+    // "strict": true            // 엄격한 타입 검사 활성화
+  },
+  "include": ["src/**/*.js", "src/**/*.ts"], // 포함할 파일 경로
+  "exclude": ["node_modules"]  // node_modules 폴더 제외
+}

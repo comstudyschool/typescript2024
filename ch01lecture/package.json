@@ -1,0 +1,17 @@
+{
+  "name": "ch01lecture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/lodash": "^4.17.12",
+    "lodash": "^4.17.21"
+  }
+}
