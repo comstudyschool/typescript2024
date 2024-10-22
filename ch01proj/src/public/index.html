@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript Fullstack Example</title>
+</head>
+<body>
+  <h1>Item List</h1>
+  <ul id="item-list"></ul>
+
+  <h2>Add New Item</h2>
+  <input type="text" id="item-name" placeholder="Item name" />
+  <button onclick="addItem()">Add Item</button>
+
+  <script>
+    async function fetchItems() {
+      const response = await fetch('/items');
+      const items = await response.json();
+      const itemList = document.getElementById('item-list');
+      itemList.innerHTML = '';
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.id}: ${item.name}`;
+        itemList.appendChild(li);
+      });
+    }
+
+    async function addItem() {
+      const itemName = document.getElementById('item-name').value;
+      await fetch('/items', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: itemName })
+      });
+      fetchItems();  // 아이템 목록 갱신
+    }
+
+    // 페이지 로드 시 아이템 목록 불러오기
+    fetchItems();
+  </script>
+</body>
+</html>

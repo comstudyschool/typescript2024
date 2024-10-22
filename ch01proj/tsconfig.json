@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2016", // 컴파일된 코드의 JavaScript 버전을 설정합니다 (ES6 이상의 기능 사용 가능).
+    "module": "commonjs", // 모듈 시스템을 CommonJS로 설정합니다 (Node.js 환경에서 사용).
+    "rootDir": "./src",
+    "outDir": "dist",
+    // "watch": true, // 파일 변경을 감시하고, 저장 시 자동으로 재컴파일하도록 설정합니다.
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true, // 파일 및 모듈 경로의 대소문자 불일치를 방지하여 일관성을 유지합니다 (Windows와 같은 대소문자 구분 없는 파일 시스템에서 유용).
+    "strict": true, 
+    "skipLibCheck": true // 외부 라이브러리의 타입 선언 파일(.d.ts) 검사를 건너뜁니다 (빌드 속도 개선).
+  },
+  "include": ["src/**/*.js", "src/**/*.ts"], // 포함할 파일을 지정합니다 (src 폴더 내부의 .js 및 .ts 파일).
+  "exclude": ["node_modules"] // node_modules 폴더는 컴파일에서 제외합니다.
+}
